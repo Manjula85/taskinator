@@ -3,6 +3,8 @@ var taskIdCounter = 0;
 var formEl = document.querySelector("#task-form");  //select form
 var tasksToDoEl = document.querySelector("#tasks-to-do");  //select ul or list in page content
 
+var pageContentEl = document.querySelector("#page-content");
+
 var taskFormHandler = function(event) {
   event.preventDefault();
   var taskNameInput = document.querySelector("input[name='task-name'").value;   //get the value from the Entered input 
@@ -95,3 +97,9 @@ var createTaskActions = function(taskId){
 };
 
 formEl.addEventListener("submit", taskFormHandler);  //What to listen to and when to execute it!
+
+var taskButtonHandler = function(event){
+  console.log(event.target);
+};
+
+pageContentEl.addEventListener("click",taskButtonHandler);
